@@ -1,0 +1,61 @@
+/* Conteneur principal */
+.settings-container {
+  padding: 20px;
+  color: var(--text-color);
+}
+
+/* Thème Noir (par défaut) */
+:root {
+  --background-color: #1a1a1a;
+  --text-color: #fff;
+  --button-color: #ff8300;
+  --button-text-color: #1a1a1a;
+}
+
+/* Thème Blanc */
+[data-theme="light"] {
+  --background-color: #f5f5f5;
+  --text-color: #000;
+  --button-color: #007bff;
+  --button-text-color: #fff;
+}
+
+/* Styles généraux */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.password-section {
+  margin-top: 20px;
+}
+
+ 
