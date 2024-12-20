@@ -104,10 +104,9 @@ body {
 .main-content {
   position: absolute;
   top: 0;
-  left: 250px; /* Place le contenu juste après la sidebar */
-  width: calc(100% - 250px); /* Utilise toute la largeur disponible */
+  left: 0px; /* Place le contenu juste après la sidebar */
+  width: 100%; /* Utilise toute la largeur disponible */
   height: 100%; /* Prend toute la hauteur de la fenêtre */
-  overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
   background-color: var(--background-dark); /* Conserve une cohérence visuelle */
 }
 

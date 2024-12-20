@@ -1,53 +1,74 @@
-/* Conteneur général pour la sidebar */
+/* Conteneur principal de la sidebar */
 .sidebar-container {
-  width: 250px;
-  background-color: #1a1a1a; /* Noir sombre */
-  height: calc(100vh - 50px); 
   position: fixed;
-  top: 50px; 
+  top: 0;
   left: 0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  height: 100vh; /* Occupe toute la hauteur */
+  width: 100px; /* Largeur de base */
+  background-color: #111;
+  transition: width 0.3s ease; /* Animation pour changement de largeur */
   z-index: 10;
 }
 
-/* Sidebar proprement dite */
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
+/* Lorsque la sidebar est survolée */
+.sidebar-container.expanded {
+  width: 20px; /* Largeur étendue */
 }
 
-
-.sidebar nav ul {
+/* Liste des liens */
+.sidebar ul {
   list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-.sidebar nav ul li {
-  width: 100%;
-  text-align: left;
-  padding: 10px 20px;
-}
-
-.sidebar-link {
-  text-decoration: none;
-  color: #fff;
-  font-size: 16px;
-  display: block;
-  padding: 10px 20px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.sidebar-link:hover {
-  background-color: #ff8300; /* Orange */
-  color: #1a1a1a; /* Noir sombre */
-  border-radius: 15px;
-}
-
-/* Contenu principal */
-.main-content {
-  margin-left: 250px; /* Décalage pour ne pas chevaucher la sidebar */
   padding: 20px;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+/* Style par défaut des liens */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ddd;
+  padding: 10px;
+  position: relative; /* Nécessaire pour la barre orange */
+  transition: background-color 0.3s ease;
+}
+
+/* Barre orange pour l'option active */
+.sidebar-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%; /* Barre prend toute la hauteur du lien */
+  width: 5px; /* Largeur de la barre */
+  background-color: #ff8300; /* Couleur orange */
+}
+
+/* Effet hover sur les liens */
+.sidebar-link:hover {
+  background-color: #222;
+}
+
+/* Icônes des liens */
+.sidebar-icon {
+  font-size: 24px;
+}
+
+/* Texte des liens */
+.sidebar-text {
+  margin-left: 15px;
+  font-size: 20px;
+  font-family: "Bangers", cursive; /* Police amusante */
+  color: #ddd;
+}
+
+/* Transition pour icônes et texte (agrandissement progressif) */
+.sidebar-container.expanded .sidebar-icon,
+.sidebar-container.expanded .sidebar-text {
+  transform: scale(1.1); /* Zoom léger */
 }
