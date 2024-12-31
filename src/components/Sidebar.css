@@ -1,74 +1,87 @@
-/* Conteneur principal de la sidebar */
+/* Conteneur général pour la sidebar */
 .sidebar-container {
+  background-color: #1a1a1a; /* Noir sombre */
+  height: 100%;
   position: fixed;
-  top: 0;
   left: 0;
-  height: 100vh; /* Occupe toute la hauteur */
-  width: 100px; /* Largeur de base */
-  background-color: #111;
-  transition: width 0.3s ease; /* Animation pour changement de largeur */
   z-index: 10;
 }
 
-/* Lorsque la sidebar est survolée */
-.sidebar-container.expanded {
-  width: 20px; /* Largeur étendue */
+/* Sidebar proprement dite */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 14%;
+  top: 0%;
 }
 
-/* Liste des liens */
-.sidebar ul {
+.sidebar nav ul {
   list-style: none;
-  padding: 20px;
-  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.sidebar li {
-  margin: 20px 0;
-  cursor: pointer;
+.sidebar nav ul li {
+  width: 100%;
+  text-align: left;
+  padding: 10px 20px;
 }
 
-/* Style par défaut des liens */
+/* Liens de la sidebar */
 .sidebar-link {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #ddd;
-  padding: 10px;
-  position: relative; /* Nécessaire pour la barre orange */
-  transition: background-color 0.3s ease;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Bangers", cursive; /* Police fun */
+  padding: 10px 20px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Barre orange pour l'option active */
+/* Icône des liens */
+.sidebar-icon {
+  font-size: 24px; 
+  margin-right: 10px; 
+}
+/* Texte des liens */
+.sidebar-text {
+  font-size: 18px;
+}
+
+.sidebar-link.active {
+  background-color: #ff8300; 
+}
+
+/* Effet au survol des liens */
+.sidebar-link:hover {
+  background-color: #ff8300; /* Orange */
+  color: #1a1a1a; /* Noir sombre */
+}
+
+/* Effet de barre orange pour l'option active */
 .sidebar-link.active::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
-  height: 100%; /* Barre prend toute la hauteur du lien */
+
   width: 5px; /* Largeur de la barre */
   background-color: #ff8300; /* Couleur orange */
 }
 
-/* Effet hover sur les liens */
+/* Effet hover sur les autres liens */
 .sidebar-link:hover {
-  background-color: #222;
+  background-color: #333; /* Fond gris foncé */
+  color: #fff; /* Texte blanc */
 }
 
-/* Icônes des liens */
-.sidebar-icon {
-  font-size: 24px;
-}
-
-/* Texte des liens */
-.sidebar-text {
-  margin-left: 15px;
-  font-size: 20px;
-  font-family: "Bangers", cursive; /* Police amusante */
-  color: #ddd;
-}
-
-/* Transition pour icônes et texte (agrandissement progressif) */
-.sidebar-container.expanded .sidebar-icon,
-.sidebar-container.expanded .sidebar-text {
+/* Transition pour une expérience plus fluide */
+.sidebar-link:hover .sidebar-icon,
+.sidebar-link:hover .sidebar-text {
   transform: scale(1.1); /* Zoom léger */
+  transition: transform 0.3s;
 }
+
+

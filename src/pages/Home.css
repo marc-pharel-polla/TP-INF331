@@ -1,11 +1,12 @@
 .home-container {
   padding: 20px;
   background-color: var(--background-dark);
+  
 }
 
 .category-section {
   margin-bottom: 30px;
-  margin-left: 250px;
+  margin-left: 14%;
 }
 
 .category-title {
@@ -42,3 +43,5 @@
   font-size: 14px;
   margin-top: 5px;
 }
+
+
